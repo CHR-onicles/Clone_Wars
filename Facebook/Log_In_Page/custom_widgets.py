@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QFrame, QSizePolicy, QLabel, QLineEdit, QGraphicsDropShadowEffect
-from PyQt5.QtCore import pyqtSignal
-from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 
 
@@ -43,10 +43,44 @@ class LinkLabel(QLabel):
 
 class GlowingLineEdit(QLineEdit):
 
+    color = QColor('#1877f2')
+    signal_send_update = pyqtSignal()
+    def __init__(self):
+        super(GlowingLineEdit, self).__init__()
+        self.cursor_visible = True
+        self.timer = QTimer()
+        self.timer.start(500)
+        self.signal_send_update.connect(self.update)
+        self.timer.timeout.connect(self.timer_slot)
+
+    @pyqtSlot()
+    def timer_slot(self):
+        if self.cursor_visible:
+            self.cursor_visible = False
+        else:
+            self.cursor_visible = True
+        self.signal_send_update.emit()
+
+    def paintEvent(self, event):
+        super().paintEvent(event)
+        if self.hasFocus():
+            if self.cursor_visible:
+                rect = self.cursorRect()
+                painter = QPainter(self)
+                new_rect = QRect(rect.x()+(rect.width()/2), rect.y(), rect.width()-(rect.width()*0.8),
+                                 rect.height())
+                painter.fillRect(new_rect, self.color)
+            else:
+                rect = self.cursorRect()
+                painter = QPainter(self)
+                new_rect = QRect(rect.x()+(rect.width()/2), rect.y(), rect.width()-(rect.width()*0.8),
+                                 rect.height())
+                painter.fillRect(new_rect, QColor('white'))
+
     def focusInEvent(self, event):
         effect = QGraphicsDropShadowEffect(self)
         effect.setOffset(0, 0)
-        effect.setColor(QColor('#1877f2'))
+        effect.setColor(self.color)
         effect.setBlurRadius(4)
         self.setGraphicsEffect(effect)
         super().focusInEvent(event)
