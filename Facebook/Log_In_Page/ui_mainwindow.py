@@ -3,6 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 
+from custom_widgets import QHSeparationLine, LinkLabel
 
 
 class UiMainWindow(QWidget):
@@ -19,7 +20,9 @@ class UiMainWindow(QWidget):
     def widgets(self):
         # <LEFT WIDGETS>
         self.lbl_facebook = QLabel('facebook')
+        self.lbl_facebook.setStyleSheet('font: 20pt segoe UI; color: #1877f2;')
         self.lbl_description = QLabel('Connect with friends and the world\n around you on Facebook.')
+        self.lbl_description.setStyleSheet('font: 15pt segoe UI;')
         # </LEFT WIDGETS>
 
         # <RIGHT WIDGETS>
@@ -32,7 +35,15 @@ class UiMainWindow(QWidget):
 
         self.btn_login = QPushButton('Log In')
 
+        self.lbl_forgot_password = LinkLabel('Forgot Password?')
+        self.lbl_forgot_password.setStyleSheet('color: #1877f2; font: 9pt segoe UI;')
+
+        self.hline = QHSeparationLine()
+
+        self.btn_new_account = QPushButton('Create New Account')
+
         # </RIGHT WIDGETS>
 
     def layouts(self):
-        pass
+        self.main_layout = QHBoxLayout()
+        self.setLayout(self.main_layout)
