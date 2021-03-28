@@ -98,14 +98,15 @@ class PasswordEdit(GlowingLineEdit):
 
     def __init__(self):
         super(PasswordEdit, self).__init__()
-        icon_1 = QPixmap('img/show.png')
         self.visible_icon = QIcon('img/showf.png')
         self.hidden_icon = QIcon('img/hidef.png')
 
         self.setEchoMode(QLineEdit.Password)
         self.toggle_password_view = self.addAction(self.visible_icon, QLineEdit.TrailingPosition)
         self.toggle_password_view.triggered.connect(self.on_toggle_password_view)
+        self.toggle_password_view.setVisible(False)
         self.is_password_visible = False
+        self.textChanged.connect(self.on_text_changed)
 
     def on_toggle_password_view(self):
         if not self.is_password_visible:
@@ -116,4 +117,10 @@ class PasswordEdit(GlowingLineEdit):
             self.setEchoMode(QLineEdit.Password)
             self.is_password_visible = False
             self.toggle_password_view.setIcon(self.visible_icon)
+
+    def on_text_changed(self):
+        if self.text() == '':
+            self.toggle_password_view.setVisible(False)
+        else:
+            self.toggle_password_view.setVisible(True)
 
