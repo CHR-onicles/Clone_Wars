@@ -40,17 +40,23 @@ class UiMainWindow(QWidget):
         self.setObjectName('login')
         self.btn_login.setCursor(Qt.PointingHandCursor)
 
-        self.lbl_forgot_password = LinkLabel('Forgot Password?')
+        self.lbl_forgot_password = LinkLabel('Forgot Password?', color='#1877f2', font='10pt segoe UI')
         self.lbl_forgot_password.setStyleSheet('color: #1877f2; font: 10pt segoe UI;')
         self.lbl_forgot_password.setCursor(Qt.PointingHandCursor)
         self.lbl_forgot_password.setAlignment(Qt.AlignHCenter)
 
         self.hline = QHSeparationLine()
-        self.hline.setStyleSheet('background-color: #d3d5d8;')
+        self.hline.setStyleSheet('background-color: #bcbcbc;')
 
         self.btn_new_account = QPushButton('Create New Account')
         self.btn_new_account.setObjectName('new_account')
         self.btn_new_account.setCursor(Qt.PointingHandCursor)
+
+        self.lbl_create_page = LinkLabel('<b>Create a Page</b>', color='black', font='10pt nunito')
+        self.lbl_create_page.setStyleSheet('background-color: #f0f2f5; font: 10pt nunito;')
+        self.lbl_create_page.setCursor(Qt.PointingHandCursor)
+        self.lbl_create_page_cont = QLabel('for a celebrity, band or business.')
+        self.lbl_create_page_cont.setStyleSheet('background-color: #f0f2f5; font: 10pt nunito;')
         # </RIGHT WIDGETS>
 
     def layouts(self):
@@ -59,6 +65,9 @@ class UiMainWindow(QWidget):
         self.left_layout = QVBoxLayout()
         self.right_layout = QVBoxLayout()
         self.new_account_layout = QHBoxLayout()
+        self.celebrity_frame = QFrame()
+        self.celebrity_layout = QHBoxLayout()
+        self.celebrity_frame.setLayout(self.celebrity_layout)
 
         # <LEFT LAYOUT>
         # self.left_layout.addStretch()
@@ -75,8 +84,16 @@ class UiMainWindow(QWidget):
         self.new_account_layout.addStretch()
         # </NEW ACCOUNT LAYOUT>
 
+        # <CELEBRITY LAYOUT>
+        self.celebrity_layout.setContentsMargins(70, 20, 50, 5)
+        self.celebrity_layout.addWidget(self.lbl_create_page)
+        self.celebrity_layout.addWidget(self.lbl_create_page_cont)
+        self.celebrity_layout.addStretch()
+        # </CELEBRITY LAYOUT>
+
         # <RIGHT LAYOUT>
         self.frame = QFrame()
+        self.frame.setObjectName('big_frame')
         self.frame.setFixedWidth(500)
         self.frame_layout = QVBoxLayout()
         self.frame_layout.setContentsMargins(20, 20, 20, 30)
@@ -90,10 +107,11 @@ class UiMainWindow(QWidget):
         self.frame.setLayout(self.frame_layout)
         self.right_layout.addStretch()
         self.right_layout.addWidget(self.frame)
+        self.right_layout.setSpacing(10)
+        self.right_layout.addWidget(self.celebrity_frame)
         self.right_layout.addStretch()
         self.right_layout.setContentsMargins(50, 0, 50, 0)
         # </RIGHT LAYOUT>
-
 
         self.main_layout.addLayout(self.left_layout, 60)
         self.main_layout.addLayout(self.right_layout, 40)

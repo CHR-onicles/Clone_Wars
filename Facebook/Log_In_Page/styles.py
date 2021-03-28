@@ -20,7 +20,7 @@ def styles():
         background-color:  #f0f2f5;
     }
     
-    QFrame {
+    QFrame#big_frame {
         border-radius: 8px;
         background-color: white;
     }

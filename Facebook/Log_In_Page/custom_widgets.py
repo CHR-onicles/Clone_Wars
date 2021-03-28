@@ -21,19 +21,21 @@ class QHSeparationLine(QFrame):
 class LinkLabel(QLabel):
 
     clicked = pyqtSignal()
-    font_family = 'segoe UI'
 
-    def enterEvent(self, event) -> None:
-        self.setStyleSheet('color: #1877f2;'
-                           'font-size: 10pt;'
-                           f'font-family: {self.font_family};'
+    def __init__(self, *args, color=None, font=None, **kwargs):
+        super(LinkLabel, self).__init__(*args, **kwargs)
+        self.color = color
+        self.font = font
+
+    def enterEvent(self, event):
+        self.setStyleSheet(f'color: {self.color};'
+                           f'font: {self.font};'
                            'text-decoration: underline;'
                            )
 
     def leaveEvent(self, event):
-        self.setStyleSheet('color: #1877f2;'
-                           'font-size: 10pt;'
-                           f'font-family: {self.font_family};'
+        self.setStyleSheet(f'color: {self.color};'
+                           f'font: {self.font};'
                            )
 
     def mousePressEvent(self, event):
