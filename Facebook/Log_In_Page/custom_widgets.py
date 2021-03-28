@@ -26,7 +26,7 @@ class LinkLabel(QLabel):
             """
             QLabel {
                 color: #1877f2;
-                font: 9pt segoe UI;
+                font: 10pt segoe UI;
                 text-decoration: underline;
             }
             """
@@ -37,7 +37,7 @@ class LinkLabel(QLabel):
             """
             QLabel {
                 color: #1877f2;
-                font: 9pt segoe UI;
+                font: 10pt segoe UI;
             }
             """
         )
