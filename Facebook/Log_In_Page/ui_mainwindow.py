@@ -3,7 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 
-from custom_widgets import QHSeparationLine, LinkLabel, GlowingLineEdit
+from custom_widgets import QHSeparationLine, LinkLabel, GlowingLineEdit, PasswordEdit
 
 
 class UiMainWindow(QWidget):
@@ -31,9 +31,8 @@ class UiMainWindow(QWidget):
         self.entry_email.setPlaceholderText('Email or Phone Number')
         self.entry_email.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
 
-        self.entry_password = GlowingLineEdit()
+        self.entry_password = PasswordEdit()
         self.entry_password.setPlaceholderText('Password')
-        self.entry_password.setEchoMode(QLineEdit.Password)
         self.entry_password.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
 
         self.btn_login = QPushButton('Log In')
