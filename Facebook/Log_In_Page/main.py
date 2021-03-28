@@ -13,7 +13,7 @@ class MainWindow(UiMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.resize(1200, 900)
-        self.setWindowTitle('Facebook')
+        self.setWindowTitle('Facebook Clone')
         self.setWindowIcon(QIcon('img/fb_icon.ico'))
         self.setObjectName('mainwindow')
         self.setStyleSheet(styles.styles())
