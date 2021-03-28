@@ -47,7 +47,6 @@ def styles():
         padding-bottom: 12px;
     }
     
-    
     QPushButton#new_account {
         font-size: 14pt;
         background-color: #42b72a;
