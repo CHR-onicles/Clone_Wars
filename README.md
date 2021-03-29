@@ -5,8 +5,8 @@ Repo for clones of popular apps/websites just for practice.
 ## Includes:
 - Facebook:
 
-    **Actual:**
-    <img src='Facebook/Log_In_Page/screenshots/facebook_site.png' width=800>
+  **Actual:**
+  ![FB_actual](https://raw.githubusercontent.com/CHR-onicles/Clone_Wars/main/Facebook/Log_In_Page/screenshots/facebook_site.png)
   
     **Clone:**
     <img src='Facebook/Log_In_Page/screenshots/fb_clone.png' width=800> 
