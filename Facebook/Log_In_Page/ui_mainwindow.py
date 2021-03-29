@@ -93,6 +93,12 @@ class UiMainWindow(QWidget):
         # <RIGHT LAYOUT>
         self.frame = QFrame()
         self.frame.setObjectName('big_frame')
+        effect = QGraphicsDropShadowEffect(self.frame)
+        effect.setOffset(0, 4)  # nailed it here but don't know what this means
+        effect.setColor(QColor('#bcbcbc'))
+        effect.setBlurRadius(15)
+        self.frame.setGraphicsEffect(effect)
+
         self.frame.setFixedWidth(500)
         self.frame_layout = QVBoxLayout()
         self.frame_layout.setContentsMargins(20, 20, 20, 30)

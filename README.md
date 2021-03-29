@@ -9,4 +9,4 @@ Repo for clones of popular apps/websites just for practice.
   ![FB_actual](https://raw.githubusercontent.com/CHR-onicles/Clone_Wars/main/Facebook/Log_In_Page/screenshots/facebook_site.png)
   
     **Clone:**
-    <img src='Facebook/Log_In_Page/screenshots/fb_clone.png' width=800> 
+  ![FB_actual](https://raw.githubusercontent.com/CHR-onicles/Clone_Wars/main/Facebook/Log_In_Page/screenshots/fb_clone.png)
