@@ -47,10 +47,18 @@ def styles():
         padding-bottom: 12px;
     }
     
+    QPushButton:hover {
+        background-color: #1466ca;
+    }
+    
     QPushButton#new_account {
         font-size: 14pt;
         background-color: #42b72a;
         border: 1px solid #42b72a;
         min-width: 250px;
+    }
+    
+    QPushButton#new_account:hover {
+        background-color: #399823;
     }
     """

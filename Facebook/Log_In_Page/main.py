@@ -31,6 +31,4 @@ if __name__ == '__main__':
 
 
 # TODO:--------------------------------------------------------------
-#    - Get darker colors for button hovers
 #    - Resize echo mode characters - the oversized af dots.
-#    - Add icon to toggle between password echo on/off
