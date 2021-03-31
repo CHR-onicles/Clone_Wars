@@ -48,7 +48,7 @@ def styles():
     }
     
     QPushButton:hover {
-        background-color: #1466ca;
+        background-color: #1670df;
     }
     
     QPushButton#new_account {
@@ -59,6 +59,6 @@ def styles():
     }
     
     QPushButton#new_account:hover {
-        background-color: #399823;
+        background-color: #40ac28;
     }
     """

@@ -43,6 +43,7 @@ class UiMainWindow(QWidget):
         self.lbl_forgot_password.setStyleSheet('color: #1877f2; font: 10pt segoe UI;')
         self.lbl_forgot_password.setCursor(Qt.PointingHandCursor)
         self.lbl_forgot_password.setAlignment(Qt.AlignHCenter)
+        self.lbl_forgot_password.setMaximumWidth(135)  # because I want the cursor to only change when hovering directly around the text
 
         self.hline = QHSeparationLine()
         self.hline.setStyleSheet('background-color: #bcbcbc;')
@@ -67,6 +68,7 @@ class UiMainWindow(QWidget):
         self.celebrity_frame = QFrame()
         self.celebrity_layout = QHBoxLayout()
         self.celebrity_frame.setLayout(self.celebrity_layout)
+        self.forgot_password_layout = QHBoxLayout()
 
         # <LEFT LAYOUT>
         # self.left_layout.addStretch()
@@ -90,6 +92,12 @@ class UiMainWindow(QWidget):
         self.celebrity_layout.addStretch()
         # </CELEBRITY LAYOUT>
 
+        # <FORGOT PASSWORD LAYOUT>
+        self.forgot_password_layout.addStretch()
+        self.forgot_password_layout.addWidget(self.lbl_forgot_password)
+        self.forgot_password_layout.addStretch()
+        # </FORGOT PASSWORD LAYOUT>
+
         # <RIGHT LAYOUT>
         self.frame = QFrame()
         self.frame.setObjectName('big_frame')
@@ -106,7 +114,7 @@ class UiMainWindow(QWidget):
         self.frame_layout.addWidget(self.entry_email)
         self.frame_layout.addWidget(self.entry_password)
         self.frame_layout.addWidget(self.btn_login)
-        self.frame_layout.addWidget(self.lbl_forgot_password)
+        self.frame_layout.addLayout(self.forgot_password_layout)
         self.frame_layout.addWidget(self.hline)
         self.frame_layout.addLayout(self.new_account_layout)
         self.frame.setLayout(self.frame_layout)
