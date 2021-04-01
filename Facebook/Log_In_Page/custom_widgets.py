@@ -18,6 +18,7 @@ class QHSeparationLine(QFrame):
         return
 
 
+
 class LinkLabel(QLabel):
 
     clicked = pyqtSignal()
@@ -41,6 +42,7 @@ class LinkLabel(QLabel):
     def mousePressEvent(self, event):
         self.clicked.emit()
         super().mousePressEvent(event)
+
 
 
 class GlowingLineEdit(QLineEdit):
@@ -92,6 +94,7 @@ class GlowingLineEdit(QLineEdit):
         effect.setEnabled(False)
         self.setGraphicsEffect(effect)
         super().focusOutEvent(event)
+
 
 
 class PasswordEdit(GlowingLineEdit):
