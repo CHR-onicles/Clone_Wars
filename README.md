@@ -2,11 +2,15 @@
 
 Repo for clones of popular apps/websites just for practice.
 
-## Includes:
-- Facebook:
+## 1. Facebook:
 
-  **Actual:**
+>  **Original:**
+
   ![FB_actual](https://raw.githubusercontent.com/CHR-onicles/Clone_Wars/main/Facebook/Log_In_Page/screenshots/fb_site.png)
   
-    **Clone:**
+>    **Clone:**
+
   ![FB_actual](https://raw.githubusercontent.com/CHR-onicles/Clone_Wars/main/Facebook/Log_In_Page/screenshots/fb_clone.png)
+
+> ### Demo Video:
+> *(will be added soon)*

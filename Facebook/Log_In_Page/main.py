@@ -32,4 +32,4 @@ if __name__ == '__main__':
 
 # TODO:--------------------------------------------------------------
 #    - Resize echo mode characters - the oversized af dots.
-#    - CReate transitions for wrong data input
+#    - Create screen for wrong entry
