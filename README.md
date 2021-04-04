@@ -1,6 +1,6 @@
 # Clone_Wars
 
-Repo for clones of popular apps/websites just for practice.
+Repo for clones of popular apps/websites using PyQt5/PySide2 just for practice.
 
 ## 1. Facebook:
 

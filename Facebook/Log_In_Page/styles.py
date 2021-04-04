@@ -32,6 +32,11 @@ def styles():
         padding: 18 18px;
     }
     
+    QLineEdit[echoMode="2"] {
+        /*lineedit-password-character: 9679; # Big dots(Black circles) */ 
+        lineedit-password-character: 8226; /* Small dots(Bullets) */
+    }
+    
     QLineEdit:focus {
         border: 1px solid #1877f2;
     }
