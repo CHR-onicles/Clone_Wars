@@ -31,5 +31,6 @@ if __name__ == '__main__':
 
 
 # TODO:--------------------------------------------------------------
-#    - Resize echo mode characters - the oversized af dots.
 #    - Create screen for wrong entry
+#    - Create a transition animation from login screen to error screen
+
